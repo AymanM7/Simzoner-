@@ -3,6 +3,22 @@ Simzoner is a highly distributed, ultra-low-latency multi-agent traffic simulati
 
 Link to Deployed Project on Cloudflare Workers :    [🔗 Live Demo — SimZoner](https://simzoner-web.pages.dev/)
 
+
+
+
+Built a multi-agent traffic simulation platform on Cloudflare's edge stack (Workers, Durable Objects, Workers AI, D1, KV, Vectorize, R2), running LLM-driven vehicle agents within a 10ms CPU / 10k-neuron daily free-tier budget
+
+Designed a deterministic 10Hz  engine decoupled from LLM decision-making (~300:1 tick-to-decision ratio), enabling bit-identical race replays from a seed + ~60-policy log at zero server cost
+
+Implemented account-wide resource admission control via a singleton Durable Object budget ledger with reserve/commit/release semantics, preventing mid-race starvation across concurrent simulations
+
+Engineered a 5-layer LLM output degradation ladder (JSON mode → lenient parse → schema validation → clamping → persona fallback tables) guaranteeing every race completes deterministically under any failure
+
+Separated ML training (Python/FastAPI/scikit-learn, offline) from edge inference (exported JSON weights, microsecond dot-product) with schema and feature-order assertions at the plane boundary
+
+
+
+
 ns BETWEEN ticks, never inside.   ║
   ║  Cost: CPU                        ║  Cost: NEURONS ← the binding limit   ║
   ╚═══════════════════════════════════╩══════════════════════════════════════╝
