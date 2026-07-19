@@ -1,8 +1,7 @@
 # Simzoner-
 Simzoner is a highly distributed, ultra-low-latency multi-agent traffic simulation platform built natively on the Cloudflare Developer Stack to model real-time vehicular behavioral logic and spatial contention. The project leverages an asynchronous, edge-driven architecture to simulate concurrent autonomous profiles (including veichles such the Tesla Cybertruck, BMW M3 Series, and Waymo all driving on HOV Lanes Acrosss Austin, Galveston , Cincanitti , New York and etc.) within constrained runtime environments without reliance on traditional centralized databases or heavy server overhead. By separating high-throughput  execution from resource-intensive cognitive training loops, the platform demonstrates how massive multi-agent simulations can be deployed directly to the network edge, ensuring global data consistency, deterministic state changes, and cost-free execution at scale.
 
-Link to Deployed Project on Cloudflare Workers :  https://simzoner-web.pages.dev/
-
+Link to Deployed Project on Cloudflare Workers :   <a href="https://simzoner-web.pages.dev/" target="_blank">Live Demo</a>
 
 ns BETWEEN ticks, never inside.   ║
   ║  Cost: CPU                        ║  Cost: NEURONS ← the binding limit   ║
