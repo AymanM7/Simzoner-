@@ -19,6 +19,20 @@ Separated ML training (Python/FastAPI/scikit-learn, offline) from edge inference
 
 
 
+The four parts
+Part	Folder	Runtime	Port (dev)
+Frontend	frontend/	Next.js on Node / Cloudflare Pages	5199
+Backend	backend/	Cloudflare Workers (TypeScript)	8787
+Cloud Compute	cloud-compute/	Cloudflare Python Workers	8788
+Machine Learning	ml/	Python (local / CI, not a server)	—
+Database	database/	Cloudflare D1 (via the backend)	—
+
+
+
+
+
+
+
 ns BETWEEN ticks, never inside.   ║
   ║  Cost: CPU                        ║  Cost: NEURONS ← the binding limit   ║
   ╚═══════════════════════════════════╩══════════════════════════════════════╝
